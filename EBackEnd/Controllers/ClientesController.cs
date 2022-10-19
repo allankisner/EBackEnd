@@ -32,7 +32,7 @@ namespace EBackEnd.Controllers
             }
         }
         // retorna cliente pelo nome 
-        [HttpGet("Get By Name")]
+        [HttpGet("GetByName")]
         public async Task<ActionResult<IAsyncEnumerable<Cliente>>>
             GetClientesByName([FromQuery] string nmCliente)
         {

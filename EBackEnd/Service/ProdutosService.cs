@@ -58,14 +58,14 @@ namespace EBackEnd.Service
             await _context.SaveChangesAsync();
         }
 
-        // Atualiza Cliente na Tabela
+        // Atualiza Produto na Tabela
         public async Task UpdateProduto(Produto produto)
         {
             _context.Entry(produto).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
 
-        //Deleta Cliente
+        //Deleta Produto
         public async Task DeleteProduto(Produto produto)
         {
             _context.Produtos.Remove(produto);

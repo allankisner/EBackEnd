@@ -33,7 +33,7 @@ namespace EBackEnd.Controllers
         }
 
         // retorna produto pela descrição 
-        [HttpGet("Get By Dsc")]
+        [HttpGet("GetByDsc")]
         public async Task<ActionResult<IAsyncEnumerable<Produto>>>
             GetProdutosByDsc([FromQuery] string dscProduto)
         {
@@ -80,7 +80,8 @@ namespace EBackEnd.Controllers
             {
                 await _produtoService.CreateProduto(produto);
 
-                return CreatedAtRoute(nameof(GetProdutos), new { id = produto.IdProduto }, produto);
+                return CreatedAtRoute(nameof(GetProdutos), new { idProduto = produto.IdProduto }, produto);
+                
             }
             catch
             {

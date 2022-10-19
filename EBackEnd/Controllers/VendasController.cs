@@ -111,21 +111,7 @@ namespace EBackEnd.Controllers
             {
                 return BadRequest("Não Foi possivel excluir o venda!");
             }
-        }
-
-        //Vendas da API
-        [HttpGet("Vendas da API")]
-
-        public async Task GetDataApi()
-        {
-            try
-            {
-                await _vendaService.GetVendas();
-            }
-            catch
-            {
-                BadRequest("Não foi possivel encontrar os dados da API");
-            }
-        }
+        }     
+        
     }
 }

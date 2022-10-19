@@ -85,7 +85,7 @@ namespace EBackEnd.Service
             };
 
 
-            _context.Vendas.Add(venda);
+            _context.Vendas.Add(newVenda);
             await _context.SaveChangesAsync();
 
             
@@ -105,27 +105,6 @@ namespace EBackEnd.Service
             await _context.SaveChangesAsync();
         }
 
-        //Vendas da API
-
-        public async Task GetDataApi()
-        {
-
-            var vendasApi = new ApiService();
-
-            var vendas = await vendasApi.GetVendas();
-
-            foreach(var venda in vendas )
-            {
-                if (!_context.Vendas.Any(i => i.IdVenda == i.IdVenda))
-                {
-                    _context.Vendas.Add(venda);
-                }
-
-                await _context.SaveChangesAsync();
-
-            }
-
-        }
     }
 
 }
